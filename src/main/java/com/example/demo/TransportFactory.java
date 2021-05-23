@@ -81,8 +81,7 @@ class TransportFactory extends BasePooledObjectFactory<Transport> {
 
     @Override
     public void destroyObject(PooledObject<Transport> p) throws Exception {
-        System.out.println("DESTROYING " + p.toString() + " with state " + p.getState());
-        LOGGER.debug("DESTROYING " + p.toString() + " with state " + p.getState());
+        System.out.println("DESTROYING " + p.toString());
         p.getObject().close();
     }
 }

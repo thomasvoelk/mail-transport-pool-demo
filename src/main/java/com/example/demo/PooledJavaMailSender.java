@@ -45,7 +45,7 @@ class PooledJavaMailSender extends JavaMailSenderImpl {
                         mimeMessage.setHeader(HEADER_MESSAGE_ID, messageId);
                     }
                     Address[] addresses = mimeMessage.getAllRecipients();
-                    LOGGER.info("Sending " + mimeMessage.getMessageID());
+                    LOGGER.trace("Sending " + mimeMessage.getMessageID());
                     transport.sendMessage(mimeMessage, (addresses != null ? addresses : new Address[0]));
                 } catch (Exception ex) {
                     Object original = (originalMessages != null ? originalMessages[i] : mimeMessage);

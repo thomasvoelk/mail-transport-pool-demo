@@ -5,6 +5,8 @@ import com.icegreen.greenmail.junit5.GreenMailExtension;
 import com.icegreen.greenmail.util.ServerSetupTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.SimpleMailMessage;
@@ -12,7 +14,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 import javax.mail.internet.AddressException;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -23,6 +24,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class DemoApplicationTests {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoApplicationTests.class);
+
 
     @RegisterExtension
     public final GreenMailExtension greenMail = new GreenMailExtension(ServerSetupTest.SMTP_IMAP);

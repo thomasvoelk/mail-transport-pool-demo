@@ -71,7 +71,7 @@ class DemoApplicationTests {
     @Test
     void name() throws AddressException {
 
-        EmailAddress a = new EmailAddress(null);
+        EmailAddress a = new EmailAddress("HURZ");
     }
 
     protected void waitForMessagesCount(int count) throws InterruptedException {
